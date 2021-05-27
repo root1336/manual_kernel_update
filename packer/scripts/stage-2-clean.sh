@@ -24,7 +24,7 @@ history -c
 rm -rf /run/log/journal/*
 
 # Fill zeros all empty space
-dd if=/dev/zero of=/EMPTY bs=1M
+dd if=/dev/zero of=/EMPTY bs=1M count=1000
 rm -f /EMPTY
 sync
 grub2-set-default 1

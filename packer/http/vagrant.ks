@@ -36,9 +36,7 @@ openssh-server
 %post --log=/root/post_install.log
 
 # Add vagrant to sudoers
-cat > /etc/sudoers.d/vagrant << EOF_sudoers_vagrant
-vagrant        ALL=(ALL)       NOPASSWD: ALL
-EOF_sudoers_vagrant
+echo "vagrant ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/vagrant
 
 /bin/chmod 0440 /etc/sudoers.d/vagrant
 /bin/sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
